@@ -21,6 +21,7 @@ public class Momentum {
     public static boolean connected = false;
     public static boolean particleAim = false;
     public static boolean safeBreak = false;
+    public static boolean scramble = false;
 
     public Momentum() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -31,6 +32,7 @@ public class Momentum {
         MinecraftForge.EVENT_BUS.register(new ConnectionListener());
         MinecraftForge.EVENT_BUS.register(new PacketListener());
         MinecraftForge.EVENT_BUS.register(new EventSubscribers());
+        MinecraftForge.EVENT_BUS.register(new ChatEventHandler());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

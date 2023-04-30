@@ -53,6 +53,13 @@ public class KeyInputListener {
             } else if (key == 324) {
                 int moonPhase = player.getLevel().getMoonPhase();
                 player.displayClientMessage(Component.literal("§eMoon Phase §7» §e" + moonPhase), true);
+            } else if (key == 323) {
+                Momentum.scramble = !Momentum.scramble;
+                if (Momentum.scramble) {
+                    player.displayClientMessage(Component.literal("§eScramble §7» §aAktiviert"), true);
+                } else {
+                    player.displayClientMessage(Component.literal("§eScramble §7» §cDeaktiviert"), true);
+                }
             }
         }
     }
